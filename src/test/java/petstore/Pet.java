@@ -49,6 +49,5 @@ public class Pet {
                 .log().all()
                 .statusCode(200);
                 //.body("name", is("Billy Francisco"));
-    }
 
 
