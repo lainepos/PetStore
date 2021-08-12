@@ -1,5 +1,38 @@
+// 1 - Pacote
 package petstore;
 
+
+//2- Bibliotecas
+
+
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+//3 - É a Classe
 public class Pet {
+    //3.1 Atribuitos
+    //URI - endereço da documentação
+    String uri = "https://petstore.swagger.io/v2/pet";
+
+    //3.2 métodos e funções
+       public String lerJson(String camihoJson) throws IOException {
+
+           return new String(Files.readAllBytes(Paths.get(camihoJson)));
+       }
+
+        // incluir um novo registro
+        @Test    // Identifica o métido ou função como teste para o testNG
+
+        public void incluirPet() throws IOException {
+           String jsonBody= lerJson("db/pet1.json");
+
+            // Sintaxe Gherkin
+            // Dado - Quando - Então
+
+        }
+
 
 }
