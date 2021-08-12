@@ -45,8 +45,5 @@ public class Pet {
                     .log().all()
                     .statusCode(200);
 
-
         }
-
-
 }
