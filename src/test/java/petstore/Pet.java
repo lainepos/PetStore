@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static io.restassured.RestAssured.given;
+
 //3 - É a Classe
 public class Pet {
     //3.1 Atribuitos
@@ -31,6 +33,18 @@ public class Pet {
 
             // Sintaxe Gherkin
             // Dado - Quando - Então
+            // Given - When - Then
+
+            given()
+                    .contentType("application/json") //comum em API Rest //API antiga é "text/xml"
+                    .log().all()
+                    .body(jsonBody)
+            .when()
+                    .post(uri)
+            .then()
+                    .log().all()
+                    .statusCode(200);
+
 
         }
 
